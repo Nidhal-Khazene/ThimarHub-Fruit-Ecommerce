@@ -3,6 +3,7 @@ import 'package:ecommerce_app/features/checkout/data/models/payment_card_model.d
 import 'package:ecommerce_app/features/checkout/data/models/product_order_model.dart';
 import 'package:ecommerce_app/features/checkout/data/models/shipping_address_model.dart';
 import 'package:ecommerce_app/features/checkout/domain/entities/order_entity.dart';
+import 'package:uuid/uuid.dart';
 
 class OrderModel {
   final double totalPrice;
@@ -13,8 +14,10 @@ class OrderModel {
   final String paymentMethod;
   final String date;
   final String status;
+  final String orderID;
 
   OrderModel({
+    required this.orderID,
     required this.date,
     required this.status,
     required this.paymentCardModel,
@@ -27,6 +30,7 @@ class OrderModel {
 
   factory OrderModel.fromEntity(OrderInputEntity orderEntity) {
     return OrderModel(
+      orderID: const Uuid().v4(),
       date: DateTime.now().toString(),
       status: OrderStatusEnum.pending.name.toString(),
       paymentCardModel: PaymentCardModel.fromEntity(
@@ -46,6 +50,7 @@ class OrderModel {
 
   Map<String, dynamic> toJson() {
     return {
+      "orderID": orderID,
       "totalPrice": totalPrice,
       "uID": uID,
       "status": status,
