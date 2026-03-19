@@ -6,6 +6,7 @@ import 'package:equatable/equatable.dart';
 class ProductEntity extends Equatable {
   final String productName, productCode, productDescription;
   String? urlImage;
+  String? imagePath;
   final num productPrice;
   final File? fileImage;
   final bool isFeatured;
@@ -29,6 +30,7 @@ class ProductEntity extends Equatable {
     required this.productCode,
     required this.productDescription,
     this.urlImage,
+    this.imagePath,
     required this.productPrice,
     this.fileImage,
     required this.isFeatured,

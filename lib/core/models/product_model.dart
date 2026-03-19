@@ -8,6 +8,7 @@ class ProductModel {
   final num productPrice;
   final bool isFeatured;
   final String? urlImage;
+  final String? imagePath;
   final int expirationsMonth;
   final bool isOrganic;
   final int numberOfCalories;
@@ -32,6 +33,7 @@ class ProductModel {
     required this.productPrice,
     this.isFeatured = false,
     this.urlImage,
+    this.imagePath,
   });
 
   factory ProductModel.fromJson(Map<String, dynamic> json) {
@@ -51,6 +53,7 @@ class ProductModel {
       productPrice: json["productPrice"] ?? 0,
       isFeatured: json["isFeatured"] ?? false,
       urlImage: json["urlImage"],
+      imagePath: json["imagePath"],
       isOrganic: json["isOrganic"] ?? false,
       avrRating: json["avrRating"] ?? 0,
       ratingCount: json["ratingCount"] ?? 0,
@@ -69,6 +72,7 @@ class ProductModel {
       productDescription: productDescription,
       productPrice: productPrice,
       urlImage: urlImage,
+      imagePath: imagePath,
       isFeatured: isFeatured,
     );
   }
@@ -82,6 +86,7 @@ class ProductModel {
       "productPrice": productPrice,
       "isFeatured": isFeatured,
       "urlImage": urlImage,
+      "imagePath": imagePath,
       "expirationsMonth": expirationsMonth,
       "isOrganic": isOrganic,
       "numberOfCalories": numberOfCalories,
