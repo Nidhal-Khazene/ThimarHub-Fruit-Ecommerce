@@ -29,6 +29,7 @@ class AuthRepoImpl extends AuthRepo {
     String emailAddress,
     String password,
     String name,
+    bool isAdmin,
   ) async {
     User? user;
     try {
@@ -40,6 +41,7 @@ class AuthRepoImpl extends AuthRepo {
         name: name,
         email: emailAddress,
         userId: user!.uid,
+        isAdmin: isAdmin,
       );
       await addUserData(user: userEntity);
       return right(userEntity);

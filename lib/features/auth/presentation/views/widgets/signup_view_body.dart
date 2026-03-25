@@ -69,9 +69,10 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                       context
                           .read<SignUpCubit>()
                           .createUserWithEmailAndPassword(
-                            emailAddress,
-                            password,
-                            name,
+                            emailAddress: emailAddress,
+                            password: password,
+                            name: name,
+                            isAdmin: false,
                           );
                     } else {
                       showSnackBar(
