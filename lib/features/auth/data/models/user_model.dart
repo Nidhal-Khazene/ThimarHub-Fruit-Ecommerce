@@ -14,7 +14,6 @@ class UserModel extends UserEntity {
       name: user.displayName ?? "",
       email: user.email ?? "",
       userId: user.uid,
-      isAdmin: false,
     );
   }
 
