@@ -30,49 +30,51 @@ class PaymentSuccessView extends StatelessWidget {
         child: Padding(
           padding: kPrimaryScreenPadding,
           child: Center(
-            child: Column(
-              children: [
-                const SizedBox(height: 67),
-                Image.asset(
-                  Assets.assetsImagesSuccessImage,
-                  width: 154,
-                  height: 107,
-                ),
-                const SizedBox(height: 33),
-                Column(
-                  children: [
-                    const Text('تم بنجاح !', style: AppStyles.bold16),
-                    const SizedBox(height: 9),
-                    Text(
-                      'رقم الطلب : 1245789663#',
-                      style: AppStyles.regular13.copyWith(
-                        color: ColorData.kFontMediumColor,
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 243),
-                CustomButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, TrackOrderView.routeName);
-                  },
-                  text: "تتبع الطلب",
-                ),
-                CustomButton(
-                  onPressed: () {
-                    Navigator.pushReplacementNamed(
-                      context,
-                      CustomBottomNavigationBar.routeName,
-                    );
-                  },
-                  text: "الرئيسية",
-                  textStyle: AppStyles.bold16.copyWith(
-                    color: ColorData.kPrimaryColor,
-                    decoration: TextDecoration.underline,
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  const SizedBox(height: 67),
+                  Image.asset(
+                    Assets.assetsImagesSuccessImage,
+                    width: 154,
+                    height: 107,
                   ),
-                  backgroundColor: Colors.transparent,
-                ),
-              ],
+                  const SizedBox(height: 33),
+                  Column(
+                    children: [
+                      const Text('تم بنجاح !', style: AppStyles.bold16),
+                      const SizedBox(height: 9),
+                      Text(
+                        'رقم الطلب : 1245789663#',
+                        style: AppStyles.regular13.copyWith(
+                          color: ColorData.kFontMediumColor,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 243),
+                  CustomButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, TrackOrderView.routeName);
+                    },
+                    text: "تتبع الطلب",
+                  ),
+                  CustomButton(
+                    onPressed: () {
+                      Navigator.pushReplacementNamed(
+                        context,
+                        CustomBottomNavigationBar.routeName,
+                      );
+                    },
+                    text: "الرئيسية",
+                    textStyle: AppStyles.bold16.copyWith(
+                      color: ColorData.kPrimaryColor,
+                      decoration: TextDecoration.underline,
+                    ),
+                    backgroundColor: Colors.transparent,
+                  ),
+                ],
+              ),
             ),
           ),
         ),
