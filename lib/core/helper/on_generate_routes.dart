@@ -17,6 +17,7 @@ import 'package:ecommerce_app/features/profile/presentation/views/widgets/profil
 import 'package:ecommerce_app/features/splash/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
 
+import '../../features/auth/presentation/views/code_verification_view.dart';
 import '../../features/auth/presentation/views/signup_view.dart';
 import '../../features/best_selling/presentation/views/best_selling_view.dart';
 import '../../features/checkout/presentation/views/widgets/payment_success_view.dart';
@@ -37,6 +38,10 @@ Route<dynamic> onGenerateRoutes(RouteSettings settings) {
     case ForgetPasswordView.routeName:
       return MaterialPageRoute(
         builder: (context) => const ForgetPasswordView(),
+      );
+    case CodeVerificationView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const CodeVerificationView(),
       );
     // Home View
     case HomeView.routeName:
