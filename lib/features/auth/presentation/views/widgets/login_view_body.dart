@@ -5,6 +5,7 @@ import 'package:ecommerce_app/core/utils/styles.dart';
 import 'package:ecommerce_app/core/widgets/custom_button.dart';
 import 'package:ecommerce_app/core/widgets/custom_text_form_field.dart';
 import 'package:ecommerce_app/features/auth/presentation/manager/cubits/log_in_cubit/login_cubit.dart';
+import 'package:ecommerce_app/features/auth/presentation/views/forget_password_view.dart';
 import 'package:ecommerce_app/features/auth/presentation/views/widgets/ask_user_auth.dart';
 import 'package:ecommerce_app/features/auth/presentation/views/widgets/custom_social_media_button.dart';
 import 'package:ecommerce_app/features/auth/presentation/views/widgets/password_field.dart';
@@ -54,10 +55,18 @@ class _LoginViewBodyState extends State<LoginViewBody> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Text(
-                    "نسيت كلمة المرور؟",
-                    style: AppStyles.semiBold13.copyWith(
-                      color: ColorData.kLightPrimaryColor,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(
+                        context,
+                        ForgetPasswordView.routeName,
+                      );
+                    },
+                    child: Text(
+                      "نسيت كلمة المرور؟",
+                      style: AppStyles.semiBold13.copyWith(
+                        color: ColorData.kLightPrimaryColor,
+                      ),
                     ),
                   ),
                 ],

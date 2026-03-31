@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/core/widgets/custom_bottom_navigation_bar.dart';
+import 'package:ecommerce_app/features/auth/presentation/views/forget_password_view.dart';
 import 'package:ecommerce_app/features/auth/presentation/views/login_view.dart';
 import 'package:ecommerce_app/features/cart/domain/entities/cart_entity.dart';
 import 'package:ecommerce_app/features/cart/presentation/views/cart_view.dart';
@@ -22,14 +23,22 @@ import '../../features/checkout/presentation/views/widgets/payment_success_view.
 
 Route<dynamic> onGenerateRoutes(RouteSettings settings) {
   switch (settings.name) {
+    // Splash View
     case SplashView.routeName:
       return MaterialPageRoute(builder: (context) => const SplashView());
+    // On Boarding View
     case OnBoardingView.routeName:
       return MaterialPageRoute(builder: (context) => const OnBoardingView());
+    // Auth
     case LoginView.routeName:
       return MaterialPageRoute(builder: (context) => const LoginView());
     case SignUpView.routeName:
       return MaterialPageRoute(builder: (context) => const SignUpView());
+    case ForgetPasswordView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const ForgetPasswordView(),
+      );
+    // Home View
     case HomeView.routeName:
       return MaterialPageRoute(builder: (context) => const HomeView());
     case BestSellingView.routeName:
