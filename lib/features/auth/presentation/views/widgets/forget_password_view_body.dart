@@ -1,4 +1,6 @@
 import 'package:ecommerce_app/core/utils/styles.dart';
+import 'package:ecommerce_app/core/widgets/custom_button.dart';
+import 'package:ecommerce_app/core/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 
 class ForgetPasswordViewBody extends StatelessWidget {
@@ -17,6 +19,9 @@ class ForgetPasswordViewBody extends StatelessWidget {
             ),
           ),
           SizedBox(height: 31),
+          CustomTextFormField(hintText: "رقم الهاتف"),
+          SizedBox(height: 30),
+          CustomButton(text: "نسيت كلمة المرور"),
         ],
       ),
     );
