@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/core/utils/colors.dart';
 import 'package:flutter/material.dart';
 
 class OtpFields extends StatefulWidget {
@@ -40,27 +41,35 @@ class _OtpFieldsState extends State<OtpFields> {
 
   Widget buildBox(int index) {
     return SizedBox(
-      width: 60,
+      width: 74,
       height: 60,
       child: TextField(
         controller: controllers[index],
         focusNode: focusNodes[index],
         keyboardType: TextInputType.number,
+        showCursor: false,
         textAlign: TextAlign.center,
         maxLength: 1,
         style: const TextStyle(fontSize: 20),
         decoration: InputDecoration(
           counterText: "",
           filled: true,
-          fillColor: Colors.grey.shade200,
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12),
-            borderSide: const BorderSide(color: Colors.orange),
+          fillColor: const Color(0xFFF9FAFA),
+          border: buildOutlineInputBorder(color: ColorData.kBorderColor),
+          enabledBorder: buildOutlineInputBorder(color: ColorData.kBorderColor),
+          focusedBorder: buildOutlineInputBorder(
+            color: ColorData.kSecondaryColor,
           ),
         ),
         onChanged: (value) => onChanged(value, index),
       ),
+    );
+  }
+
+  OutlineInputBorder buildOutlineInputBorder({required Color color}) {
+    return OutlineInputBorder(
+      borderRadius: BorderRadius.circular(12),
+      borderSide: BorderSide(color: color),
     );
   }
 
