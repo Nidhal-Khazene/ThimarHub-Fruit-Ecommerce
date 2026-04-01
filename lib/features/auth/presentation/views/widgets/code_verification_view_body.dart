@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/core/utils/styles.dart';
 import 'package:ecommerce_app/core/widgets/custom_button.dart';
+import 'package:ecommerce_app/features/auth/presentation/views/new_password_view.dart';
 import 'package:ecommerce_app/features/auth/presentation/views/widgets/otp_fields.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +21,12 @@ class CodeVerificationViewBody extends StatelessWidget {
           const SizedBox(height: 29),
           const OtpFields(),
           const SizedBox(height: 29),
-          const CustomButton(text: "تحقق من الرمز"),
+          CustomButton(
+            text: "تحقق من الرمز",
+            onPressed: () {
+              Navigator.pushNamed(context, NewPasswordView.routeName);
+            },
+          ),
           const SizedBox(height: 24),
           Text(
             'إعادة إرسال الرمز',
