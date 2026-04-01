@@ -2,9 +2,13 @@
 
 ## Screenshots
 
-| Splash | Onboarding | Second Onboarding | Login |
-|:------:|:----------:|:----------------:|:-----:|
+|                         Splash                          | Onboarding | Second Onboarding | Login |
+|:-------------------------------------------------------:|:----------:|:----------------:|:-----:|
 | <img src="assets/preview/splash_view.png" width="220"/> | <img src="assets/preview/on_boarding_view.png" width="220"/> | <img src="assets/preview/second_on_boarding_view.png" width="220"/> | <img src="assets/preview/login_view.png" width="220"/> |
+
+|                    Change Password 1                    |                       Change Password 2                       |                       Change Password 3                       |                       Change Password 4                       |
+|:-------------------------------------------------------:|:-------------------------------------------------------------:|:-------------------------------------------------------------:|:-------------------------------------------------------------:|
+| <img src="assets/preview/change_password_1.png" width="220"/> | <img src="assets/preview/change_password_2.png" width="220"/> | <img src="assets/preview/change_password_3.png" width="220"/> | <img src="assets/preview/change_password_4.png" width="220"/> |
 
 | Sign Up | Main | Products | Filter |
 |:-------:|:----:|:--------:|:------:|
