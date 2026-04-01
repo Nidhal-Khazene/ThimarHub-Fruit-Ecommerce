@@ -68,7 +68,7 @@ class _OtpFieldsState extends State<OtpFields> {
 
   OutlineInputBorder buildOutlineInputBorder({required Color color}) {
     return OutlineInputBorder(
-      borderRadius: BorderRadius.circular(12),
+      borderRadius: BorderRadius.circular(4),
       borderSide: BorderSide(color: color),
     );
   }
