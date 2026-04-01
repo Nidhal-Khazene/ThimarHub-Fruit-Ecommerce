@@ -106,4 +106,8 @@ class FirebaseAuthService {
     }
     return true;
   }
+
+  Future<void> signOut() async {
+    await FirebaseAuth.instance.signOut();
+  }
 }
