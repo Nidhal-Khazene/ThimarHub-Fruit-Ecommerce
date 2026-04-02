@@ -61,7 +61,7 @@ dependencies:
   provider: ^6.1.5+1
   flutter_paypal_payment: ^1.0.8
   uuid: ^4.5.3
-  font_awesome_flutter: ^10.9.1
+  font_awesome_flutter: ^10.8.0
 
 
 dev_dependencies:
@@ -92,6 +92,7 @@ flutter:
     - assets/images/profile_image.png
     - assets/images/products/
     - assets/images/payments/
+    - assets/images/products_details/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
   # For details regarding adding assets from package dependencies, see
@@ -118,7 +119,7 @@ flutter:
 flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
-  image_path: "assets/images/icon/starting_logostarting_logo.png"
+  image_path: "assets/images/icon/starting_logo.png"
   min_sdk_android: 21 # android min sdk min:16, default 21
 
 flutter_assets:
