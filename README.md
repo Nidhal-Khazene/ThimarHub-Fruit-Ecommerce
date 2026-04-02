@@ -18,9 +18,9 @@ ThimarHub-Fruit-Ecommerce is a vibrant and user-friendly mobile application desi
 | <img src="assets/preview/change_password_1.png" width="220"/> | <img src="assets/preview/change_password_2.png" width="220"/> | <img src="assets/preview/change_password_3.png" width="220"/> | <img src="assets/preview/change_password_4.png" width="220"/> |
 
 
-|                       Product Details View                       |                                             |                                             |                                           |
-|:----------------------------------------------------------------:|:-------------------------------------------------------------:|:-------------------------------------------------------------:|:-------------------------------------------------------------:|
-| <img src="assets/preview/product_details_view.png" width="220"/> | <img src="" width="220"/> | <img src="" width="220"/> | <img src="" width="220"/> |
+|                       Product Details View                       |
+|:----------------------------------------------------------------:|
+| <img src="assets/preview/product_details_view.png" width="220"/> | 
 
 
 
