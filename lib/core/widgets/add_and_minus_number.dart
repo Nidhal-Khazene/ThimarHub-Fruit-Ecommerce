@@ -7,36 +7,64 @@ import '../../features/cart/presentation/manager/cubits/cart_item_cubit/cart_ite
 import '../utils/colors.dart';
 import '../utils/styles.dart';
 
-class AddAndMinusNumber extends StatelessWidget {
-  const AddAndMinusNumber({super.key, required this.cartItemEntity});
+class AddAndMinusNumber extends StatefulWidget {
+  const AddAndMinusNumber({
+    super.key,
+    required this.cartItemEntity,
+    this.circleRadius,
+    this.iconSize,
+  });
   final CartItemEntity cartItemEntity;
+  final double? circleRadius;
+  final double? iconSize;
+
+  @override
+  State<AddAndMinusNumber> createState() => _AddAndMinusNumberState();
+}
+
+class _AddAndMinusNumberState extends State<AddAndMinusNumber> {
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         GestureDetector(
           onTap: () {
-            cartItemEntity.increaseQuantity();
-            context.read<CartItemCubit>().updateCartItem(cartItemEntity);
+            setState(() {
+              widget.cartItemEntity.increaseQuantity();
+            });
+            context.read<CartItemCubit>().updateCartItem(widget.cartItemEntity);
           },
           child: CircleAvatar(
-            radius: 12,
+            radius: widget.circleRadius ?? 12,
             backgroundColor: ColorData.kPrimaryColor,
-            child: const Icon(Iconsax.add_copy, color: Colors.white, size: 20),
+            child: Icon(
+              Iconsax.add_copy,
+              color: Colors.white,
+              size: widget.iconSize ?? 20,
+            ),
           ),
         ),
         const SizedBox(width: 16),
-        Text(cartItemEntity.quantity.toString(), style: AppStyles.bold16),
+        Text(
+          widget.cartItemEntity.quantity.toString(),
+          style: AppStyles.bold16,
+        ),
         const SizedBox(width: 16),
         GestureDetector(
           onTap: () {
-            cartItemEntity.decreaseQuantity();
-            context.read<CartItemCubit>().updateCartItem(cartItemEntity);
+            setState(() {
+              widget.cartItemEntity.decreaseQuantity();
+            });
+            context.read<CartItemCubit>().updateCartItem(widget.cartItemEntity);
           },
-          child: const CircleAvatar(
-            radius: 12,
-            backgroundColor: Color(0xFFF1F1F5),
-            child: Icon(Iconsax.minus_copy, color: Color(0xFF969899), size: 20),
+          child: CircleAvatar(
+            radius: widget.circleRadius ?? 12,
+            backgroundColor: const Color(0xFFF1F1F5),
+            child: Icon(
+              Iconsax.minus_copy,
+              color: const Color(0xFF969899),
+              size: widget.iconSize ?? 20,
+            ),
           ),
         ),
       ],
