@@ -7,6 +7,7 @@ import 'package:ecommerce_app/core/widgets/add_and_minus_number.dart';
 import 'package:ecommerce_app/core/widgets/custom_button.dart';
 import 'package:ecommerce_app/core/widgets/custom_image_network.dart';
 import 'package:ecommerce_app/core/widgets/go_back_circle.dart';
+import 'package:ecommerce_app/features/products/presentation/views/review_view.dart';
 import 'package:ecommerce_app/features/products/presentation/views/widgets/product_details_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -127,11 +128,16 @@ class _ProductDetailsViewBodyState extends State<ProductDetailsViewBody> {
                       ),
                     ),
                     const SizedBox(width: 9),
-                    Text(
-                      'المراجعه',
-                      style: AppStyles.bold13.copyWith(
-                        color: ColorData.kPrimaryColor,
-                        decoration: TextDecoration.underline,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, ReviewView.routeName);
+                      },
+                      child: Text(
+                        'المراجعه',
+                        style: AppStyles.bold13.copyWith(
+                          color: ColorData.kPrimaryColor,
+                          decoration: TextDecoration.underline,
+                        ),
                       ),
                     ),
                   ],

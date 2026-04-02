@@ -10,6 +10,7 @@ import 'package:ecommerce_app/features/home/presentation/views/home_view.dart';
 import 'package:ecommerce_app/features/on_boarding/presentation/views/on_boarding_view.dart';
 import 'package:ecommerce_app/features/products/presentation/views/product_details_view.dart';
 import 'package:ecommerce_app/features/products/presentation/views/products_view.dart';
+import 'package:ecommerce_app/features/products/presentation/views/review_view.dart';
 import 'package:ecommerce_app/features/profile/presentation/views/widgets/about_us_view.dart';
 import 'package:ecommerce_app/features/profile/presentation/views/widgets/add_new_payment_card_view.dart';
 import 'package:ecommerce_app/features/profile/presentation/views/widgets/favourites_view.dart';
@@ -60,6 +61,8 @@ Route<dynamic> onGenerateRoutes(RouteSettings settings) {
       return MaterialPageRoute(
         builder: (context) => ProductDetailsView(productEntity: productEntity),
       );
+    case ReviewView.routeName:
+      return MaterialPageRoute(builder: (context) => const ReviewView());
     case CustomBottomNavigationBar.routeName:
       return MaterialPageRoute(
         builder: (context) => const CustomBottomNavigationBar(),
