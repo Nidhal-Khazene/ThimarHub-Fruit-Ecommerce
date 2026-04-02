@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
+import '../../features/products/presentation/views/product_details_view.dart';
 import '../entities/product_entity.dart';
 import 'custom_image_network.dart';
 
@@ -40,8 +41,17 @@ class FruitItem extends StatelessWidget {
                 const SizedBox(height: 17),
                 productEntity.urlImage != null
                     ? Flexible(
-                        child: CustomImageNetwork(
-                          urlImage: productEntity.urlImage!,
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(
+                              context,
+                              ProductDetailsView.routeName,
+                              arguments: productEntity,
+                            );
+                          },
+                          child: CustomImageNetwork(
+                            urlImage: productEntity.urlImage!,
+                          ),
                         ),
                       )
                     : Flexible(

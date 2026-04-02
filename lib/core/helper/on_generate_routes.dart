@@ -23,6 +23,7 @@ import '../../features/auth/presentation/views/code_verification_view.dart';
 import '../../features/auth/presentation/views/signup_view.dart';
 import '../../features/best_selling/presentation/views/best_selling_view.dart';
 import '../../features/checkout/presentation/views/widgets/payment_success_view.dart';
+import '../entities/product_entity.dart';
 
 Route<dynamic> onGenerateRoutes(RouteSettings settings) {
   switch (settings.name) {
@@ -55,8 +56,9 @@ Route<dynamic> onGenerateRoutes(RouteSettings settings) {
     case ProductsView.routeName:
       return MaterialPageRoute(builder: (context) => const ProductsView());
     case ProductDetailsView.routeName:
+      ProductEntity productEntity = settings.arguments as ProductEntity;
       return MaterialPageRoute(
-        builder: (context) => const ProductDetailsView(),
+        builder: (context) => ProductDetailsView(productEntity: productEntity),
       );
     case CustomBottomNavigationBar.routeName:
       return MaterialPageRoute(
