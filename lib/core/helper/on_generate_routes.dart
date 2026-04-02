@@ -8,6 +8,7 @@ import 'package:ecommerce_app/features/checkout/presentation/views/checkout_view
 import 'package:ecommerce_app/features/checkout/presentation/views/widgets/track_order_view.dart';
 import 'package:ecommerce_app/features/home/presentation/views/home_view.dart';
 import 'package:ecommerce_app/features/on_boarding/presentation/views/on_boarding_view.dart';
+import 'package:ecommerce_app/features/products/presentation/views/product_details_view.dart';
 import 'package:ecommerce_app/features/products/presentation/views/products_view.dart';
 import 'package:ecommerce_app/features/profile/presentation/views/widgets/about_us_view.dart';
 import 'package:ecommerce_app/features/profile/presentation/views/widgets/add_new_payment_card_view.dart';
@@ -53,6 +54,10 @@ Route<dynamic> onGenerateRoutes(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => const BestSellingView());
     case ProductsView.routeName:
       return MaterialPageRoute(builder: (context) => const ProductsView());
+    case ProductDetailsView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const ProductDetailsView(),
+      );
     case CustomBottomNavigationBar.routeName:
       return MaterialPageRoute(
         builder: (context) => const CustomBottomNavigationBar(),
