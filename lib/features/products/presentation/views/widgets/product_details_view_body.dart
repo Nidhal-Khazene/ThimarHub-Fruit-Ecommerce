@@ -137,6 +137,7 @@ class _ProductDetailsViewBodyState extends State<ProductDetailsViewBody> {
                         style: AppStyles.bold13.copyWith(
                           color: ColorData.kPrimaryColor,
                           decoration: TextDecoration.underline,
+                          decorationColor: ColorData.kPrimaryColor,
                         ),
                       ),
                     ),
