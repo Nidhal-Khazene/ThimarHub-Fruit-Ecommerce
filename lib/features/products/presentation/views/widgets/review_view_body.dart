@@ -1,11 +1,41 @@
+import 'package:ecommerce_app/core/models/list_tile_model.dart';
 import 'package:ecommerce_app/core/utils/assets.dart';
 import 'package:ecommerce_app/core/utils/styles.dart';
 import 'package:ecommerce_app/core/widgets/custom_text_form_field.dart';
 import 'package:ecommerce_app/features/products/presentation/views/widgets/rating_and_review_summary_section.dart';
+import 'package:ecommerce_app/features/products/presentation/views/widgets/review_item.dart';
 import 'package:flutter/material.dart';
 
 class ReviewViewBody extends StatelessWidget {
   const ReviewViewBody({super.key});
+
+  static List<ListTileModel> list = [
+    ListTileModel(
+      leading: Image.asset(Assets.assetsImagesPersonsPerson1),
+      title: "Eslam Mousa",
+      subTitle: "25/06/2020",
+    ),
+    ListTileModel(
+      leading: Image.asset(Assets.assetsImagesPersonsPerson2),
+      title: "Eslam Mousa",
+      subTitle: "25/06/2020",
+    ),
+    ListTileModel(
+      leading: Image.asset(Assets.assetsImagesPersonsPerson3),
+      title: "Khaled Ahmed",
+      subTitle: "25/06/2020",
+    ),
+    ListTileModel(
+      leading: Image.asset(Assets.assetsImagesPersonsPerson2),
+      title: "Eslam Mousa",
+      subTitle: "25/06/2020",
+    ),
+    ListTileModel(
+      leading: Image.asset(Assets.assetsImagesPersonsPerson1),
+      title: "Eslam Mousa",
+      subTitle: "25/06/2020",
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -51,6 +81,16 @@ class ReviewViewBody extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           const RatingAndReviewSummarySection(),
+          const SizedBox(height: 16),
+          Column(
+            children: List.generate(list.length, (index) {
+              return ReviewItem(
+                image: list[index].leading,
+                date: list[index].subTitle!,
+                fullName: list[index].title,
+              );
+            }),
+          ),
         ],
       ),
     );
