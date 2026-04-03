@@ -14,6 +14,8 @@ class RatingSummaryArabicLayout extends StatelessWidget {
         key: UniqueKey(),
         counter: 5,
         showAverage: false,
+        color: const Color(0xFFFFB400),
+        thickness: 8,
         counterFiveStars: 5,
         counterFourStars: 4,
         counterThreeStars: 3,
