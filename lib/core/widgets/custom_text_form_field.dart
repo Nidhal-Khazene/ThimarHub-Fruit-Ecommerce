@@ -17,6 +17,7 @@ class CustomTextFormField extends StatelessWidget {
     this.borderRadius,
     this.hintTextAlign,
     this.hintStyle,
+    this.borderColor,
   });
 
   final String hintText;
@@ -32,6 +33,7 @@ class CustomTextFormField extends StatelessWidget {
   final Color? fillColor;
   final double? borderWidth;
   final BorderRadius? borderRadius;
+  final Color? borderColor;
 
   @override
   Widget build(BuildContext context) {
@@ -56,25 +58,30 @@ class CustomTextFormField extends StatelessWidget {
         hint: Text(
           textAlign: hintTextAlign,
           hintText,
-          style: AppStyles.bold13.copyWith(color: const Color(0xFF949D9E)),
+          style:
+              hintStyle ??
+              AppStyles.bold13.copyWith(color: const Color(0xFF949D9E)),
         ),
         hintStyle: hintStyle,
         prefixIcon: prefixIcon,
         prefixIconColor: prefixIconColor,
         suffixIcon: suffixIcon,
         suffixIconColor: suffixIconColor ?? const Color(0xFFC9CECE),
-        enabledBorder: buildOutlineInputBorder(borderWidth),
-        focusedBorder: buildOutlineInputBorder(borderWidth),
+        enabledBorder: buildOutlineInputBorder(borderWidth, borderColor),
+        focusedBorder: buildOutlineInputBorder(borderWidth, borderColor),
       ),
     );
   }
 
-  OutlineInputBorder buildOutlineInputBorder([double? borderWidth]) {
+  OutlineInputBorder buildOutlineInputBorder([
+    double? borderWidth,
+    Color? borderColor,
+  ]) {
     return OutlineInputBorder(
       borderRadius: borderRadius ?? BorderRadius.circular(4),
       borderSide: BorderSide(
         width: borderWidth ?? 1,
-        color: const Color(0xFFE6E9E9),
+        color: borderColor ?? const Color(0xFFE6E9E9),
       ),
     );
   }
