@@ -4,12 +4,12 @@ class ListTileModel {
   final String title;
   final String? subTitle;
   final Widget leading;
-  final Widget trailing;
+  final Widget? trailing;
 
   ListTileModel({
     required this.title,
     this.subTitle,
     required this.leading,
-    required this.trailing,
+    this.trailing,
   });
 }
