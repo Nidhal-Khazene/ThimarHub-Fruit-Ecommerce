@@ -5,6 +5,7 @@ import 'package:ecommerce_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/widgets/notification_container.dart';
+import '../../../../notifications/presentation/views/notifications_view.dart';
 
 class CustomHomeAppBar extends StatelessWidget {
   const CustomHomeAppBar({super.key});
@@ -34,7 +35,12 @@ class CustomHomeAppBar extends StatelessWidget {
         ),
       ),
       subtitle: Text(getUser()?.name ?? 'Guest', style: AppStyles.bold16),
-      trailing: const NotificationContainer(),
+      trailing: GestureDetector(
+        onTap: () {
+          Navigator.pushNamed(context, NotificationsView.routeName);
+        },
+        child: const NotificationContainer(),
+      ),
     );
   }
 }
