@@ -62,6 +62,69 @@ class NotificationsViewBody extends StatelessWidget {
               Assets.assetsImagesNotificationDiscount,
             ),
           ),
+          const SizedBox(height: 8),
+          NotReadNotificationsItem(
+            image: Image.asset(
+              width: 59,
+              height: 59,
+              Assets.assetsImagesNotificationDiscount,
+            ),
+          ),
+          const SizedBox(height: 11),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: kHorizontalPadding),
+            child: Row(
+              children: [
+                Text(
+                  'في وقت سابق',
+                  textAlign: TextAlign.right,
+                  style: AppStyles.bold16.copyWith(
+                    color: const Color(0xFF0C0D0D) /* Grayscale-950 */,
+                  ),
+                ),
+                const SizedBox(width: 6),
+                CustomSmallOvalContainer(
+                  padding: EdgeInsets.zero,
+                  width: 22,
+                  height: 22,
+                  widget: Center(
+                    child: Text(
+                      '2',
+                      style: AppStyles.bold13.copyWith(
+                        color: ColorData.kPrimaryColor,
+                      ),
+                    ),
+                  ),
+                ),
+                const Spacer(),
+                Text(
+                  'تحديد الكل مقروء',
+                  textAlign: TextAlign.center,
+                  style: AppStyles.regular13.copyWith(
+                    color: const Color(0xFF949D9E) /* Grayscale-400 */,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 16),
+          const ReadNotificationsItem(),
+          const SizedBox(height: 8),
+          NotReadNotificationsItem(
+            image: Image.asset(
+              width: 59,
+              height: 59,
+              Assets.assetsImagesNotificationDiscount,
+            ),
+          ),
+          const SizedBox(height: 8),
+          NotReadNotificationsItem(
+            image: Image.asset(
+              width: 59,
+              height: 59,
+              Assets.assetsImagesNotificationDiscount,
+            ),
+          ),
         ],
       ),
     );
