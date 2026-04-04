@@ -24,6 +24,7 @@ import '../../features/auth/presentation/views/code_verification_view.dart';
 import '../../features/auth/presentation/views/signup_view.dart';
 import '../../features/best_selling/presentation/views/best_selling_view.dart';
 import '../../features/checkout/presentation/views/widgets/payment_success_view.dart';
+import '../../features/notifications/presentation/views/notifications_view.dart';
 import '../entities/product_entity.dart';
 
 Route<dynamic> onGenerateRoutes(RouteSettings settings) {
@@ -98,6 +99,9 @@ Route<dynamic> onGenerateRoutes(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => const FavouritesView());
     case AboutUsView.routeName:
       return MaterialPageRoute(builder: (context) => const AboutUsView());
+    case NotificationsView.routeName:
+      return MaterialPageRoute(builder: (context) => const NotificationsView());
+
     default:
       return MaterialPageRoute(
         builder: (context) => const CustomBottomNavigationBar(),
