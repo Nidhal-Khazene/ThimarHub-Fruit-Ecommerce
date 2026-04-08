@@ -14,6 +14,7 @@ class CustomSearchBar extends StatelessWidget {
     this.borderWidth,
     this.onTap,
     this.enabled,
+    this.borderColor,
   });
   final String hintText;
   final Widget? suffixIcon;
@@ -24,7 +25,7 @@ class CustomSearchBar extends StatelessWidget {
   final double? borderWidth;
   final void Function()? onTap;
   final bool? enabled;
-
+  final Color? borderColor;
   @override
   Widget build(BuildContext context) {
     return TextField(
@@ -42,18 +43,21 @@ class CustomSearchBar extends StatelessWidget {
         prefixIconColor: prefixIconColor,
         suffixIcon: GestureDetector(onTap: onTap, child: suffixIcon),
         suffixIconColor: suffixIconColor ?? const Color(0xFFC9CECE),
-        enabledBorder: buildOutlineInputBorder(borderWidth),
-        focusedBorder: buildOutlineInputBorder(borderWidth),
+        enabledBorder: buildOutlineInputBorder(borderWidth, borderColor),
+        focusedBorder: buildOutlineInputBorder(borderWidth, borderColor),
       ),
     );
   }
 
-  OutlineInputBorder buildOutlineInputBorder([double? borderWidth]) {
+  OutlineInputBorder buildOutlineInputBorder([
+    double? borderWidth,
+    Color? borderColor,
+  ]) {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(4),
       borderSide: BorderSide(
         width: borderWidth ?? 1,
-        color: const Color(0xFFE6E9E9),
+        color: borderColor ?? const Color(0xFFE6E9E9),
       ),
     );
   }
