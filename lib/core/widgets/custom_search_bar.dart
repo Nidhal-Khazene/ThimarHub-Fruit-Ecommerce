@@ -13,6 +13,7 @@ class CustomSearchBar extends StatelessWidget {
     this.fillColor,
     this.borderWidth,
     this.onTap,
+    this.enabled,
   });
   final String hintText;
   final Widget? suffixIcon;
@@ -22,10 +23,12 @@ class CustomSearchBar extends StatelessWidget {
   final Color? fillColor;
   final double? borderWidth;
   final void Function()? onTap;
+  final bool? enabled;
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      enabled: enabled,
       keyboardType: TextInputType.text,
       decoration: InputDecoration(
         filled: true,

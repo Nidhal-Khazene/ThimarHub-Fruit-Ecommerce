@@ -17,6 +17,7 @@ import 'package:ecommerce_app/features/profile/presentation/views/widgets/favour
 import 'package:ecommerce_app/features/profile/presentation/views/widgets/my_orders_view.dart';
 import 'package:ecommerce_app/features/profile/presentation/views/widgets/personal_profile_view.dart';
 import 'package:ecommerce_app/features/profile/presentation/views/widgets/profile_payments_view.dart';
+import 'package:ecommerce_app/features/search/presentation/views/search_view.dart';
 import 'package:ecommerce_app/features/splash/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
 
@@ -101,6 +102,8 @@ Route<dynamic> onGenerateRoutes(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => const AboutUsView());
     case NotificationsView.routeName:
       return MaterialPageRoute(builder: (context) => const NotificationsView());
+    case SearchView.routeName:
+      return MaterialPageRoute(builder: (context) => const SearchView());
 
     default:
       return MaterialPageRoute(

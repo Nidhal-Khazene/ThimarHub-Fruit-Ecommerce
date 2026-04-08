@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/core/utils/colors.dart';
+import 'package:ecommerce_app/features/search/presentation/views/search_view.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
@@ -9,14 +10,20 @@ class CustomHomeSearch extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomSearchBar(
-      borderWidth: 0,
-      fillColor: Colors.transparent,
-      hintText: "ابحث عن.......",
-      suffixIcon: const Icon(Iconsax.setting_4_copy),
-      suffixIconColor: ColorData.kFontSecondaryColor,
-      prefixIcon: const Icon(Iconsax.search_normal_1_copy),
-      prefixIconColor: ColorData.kPrimaryColor,
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, SearchView.routeName);
+      },
+      child: CustomSearchBar(
+        enabled: false,
+        borderWidth: 0,
+        fillColor: Colors.transparent,
+        hintText: "ابحث عن.......",
+        suffixIcon: const Icon(Iconsax.setting_4_copy),
+        suffixIconColor: ColorData.kFontSecondaryColor,
+        prefixIcon: const Icon(Iconsax.search_normal_1_copy),
+        prefixIconColor: ColorData.kPrimaryColor,
+      ),
     );
   }
 }
