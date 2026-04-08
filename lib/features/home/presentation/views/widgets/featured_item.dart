@@ -41,6 +41,7 @@ class FeaturedItem extends StatelessWidget {
                     ),
                     const SizedBox(height: 7),
                     CustomButton(
+                      borderColor: Colors.transparent,
                       borderRadiusValue: 4,
                       width: 116,
                       height: 34,

@@ -27,7 +27,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
     return const CustomScrollView(
       slivers: [
         SliverToBoxAdapter(child: CustomHomeAppBar()),
-        SliverToBoxAdapter(child: CustomHomeSearch()),
+        SliverToBoxAdapter(child: CustomHomeSearch(enabled: false)),
         SliverToBoxAdapter(child: SizedBox(height: 24)),
         SliverToBoxAdapter(child: FeaturedSection()),
         SliverToBoxAdapter(child: BestSellerHeader()),
